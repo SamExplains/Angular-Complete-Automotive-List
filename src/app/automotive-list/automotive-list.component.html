@@ -3,5 +3,12 @@
     <app-automotive-edit></app-automotive-edit>
     <hr>
     <p>Auto List loaded</p>
+    <ul class="list-group mb-3">
+      <a href="#" class="list-group-item" style="cursor: pointer" *ngFor="let job of jobs">
+
+        {{ job.name }}
+
+      </a>
+    </ul>
   </div>
 </div>
