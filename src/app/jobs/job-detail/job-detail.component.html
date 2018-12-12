@@ -1,12 +1,12 @@
 <div class="row">
   <div class="col-12">
-    <img src="" class="img-fluid" alt="">
+    <img [src]="job.imagePath"  class="img-fluid" alt="{{ job.name }}">
   </div>
 </div>
 
 <div class="row">
   <div class="col-12">
-    <h4>Job Name</h4>
+    <h4>{{ job.name }}</h4>
   </div>
 </div>
 
@@ -29,7 +29,7 @@
 
 <div class="row">
   <div class="col-12">
-    Description
+    {{ job.description }}
   </div>
 </div>
 

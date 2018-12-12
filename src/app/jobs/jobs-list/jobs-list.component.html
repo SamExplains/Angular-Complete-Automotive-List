@@ -8,20 +8,6 @@
 
 <div class="row">
   <div class="col-12">
-    <a *ngFor="let job of jobs" href="" class="list-group-item clearfix mb-3">
-      <div class="row">
-        <div class="col-9">
-          <h4 class="list-group-item-heading">{{job.name}}</h4>
-          <p class="list-group-item-text">{{job.description}}</p>
-        </div>
-        <div class="col-3">
-          <img class="img-fluid" src="{{job.imagePath}}" alt="{{job.name}}" style="max-height: 5rem">
-        </div>
-      </div>
-    </a>
-
-    <hr>
-
-    <app-job-item></app-job-item>
+    <app-job-item *ngFor="let jobEl of jobs" [job]="jobEl" (jobSelected)="onJobSelected(jobEl)"></app-job-item>
   </div>
 </div>
