@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Complete-Automotive-Jobs-Planner';
+  loadedNav = 'jobs';
+
+  onNavigate(nav: string) {
+    this.loadedNav = nav;
+  }
 }
