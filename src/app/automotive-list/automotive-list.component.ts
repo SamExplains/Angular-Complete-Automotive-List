@@ -14,4 +14,7 @@ export class AutomotiveListComponent implements OnInit {
   ngOnInit() {
   }
 
+  onJobAdded(job: SharedJob) {
+    this.jobs.push(job);
+  }
 }

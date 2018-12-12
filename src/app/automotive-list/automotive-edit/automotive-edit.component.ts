@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild} from '@angular/core';
+import {SharedJob} from '../../shared/jobs.model';
 
 @Component({
   selector: 'app-automotive-edit',
@@ -6,10 +7,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./automotive-edit.component.css']
 })
 export class AutomotiveEditComponent implements OnInit {
+  @ViewChild('nameInput') nameInputRef: ElementRef;
+  @ViewChild('amountInput') amountInputRef: ElementRef;
+  @Output() autolistAdded = new EventEmitter<Job>();
 
   constructor() { }
 
   ngOnInit() {
   }
 
+  onAddItem() {
+    const jobName = this.nameInputRef.nativeElement.value;
+    const amountName = this.amountInputRef.nativeElement.value;
+    const newJob = new SharedJob(jobName, amountName);
+    this.autolistAdded.emit(newJob);
+  }
 }
