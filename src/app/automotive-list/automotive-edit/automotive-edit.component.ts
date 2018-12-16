@@ -9,7 +9,7 @@ import {SharedJob} from '../../shared/jobs.model';
 export class AutomotiveEditComponent implements OnInit {
   @ViewChild('nameInput') nameInputRef: ElementRef;
   @ViewChild('amountInput') amountInputRef: ElementRef;
-  @Output() autolistAdded = new EventEmitter<Job>();
+  @Output() autolistAdded = new EventEmitter<SharedJob>();
 
   constructor() { }
 
