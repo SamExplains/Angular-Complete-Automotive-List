@@ -10,6 +10,8 @@ import { JobItemComponent } from './jobs/jobs-list/job-item/job-item.component';
 import { AutomotiveListComponent } from './automotive-list/automotive-list.component';
 import { AutomotiveEditComponent } from './automotive-list/automotive-edit/automotive-edit.component';
 import { DropdownDirective } from './shared/dropdown.directive';
+import {JobService} from './jobs/job.service';
+import {AutomotiveListService} from './automotive-list/automotive-list.service';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,7 @@ import { DropdownDirective } from './shared/dropdown.directive';
   imports: [
     BrowserModule
   ],
-  providers: [],
+  providers: [JobService, AutomotiveListService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

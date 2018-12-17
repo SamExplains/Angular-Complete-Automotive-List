@@ -1,5 +1,6 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {Job} from '../jobs.model';
+import {JobService} from '../job.service';
 
 @Component({
   selector: 'app-jobs-list',
@@ -8,12 +9,12 @@ import {Job} from '../jobs.model';
 })
 export class JobsListComponent implements OnInit {
   @Output() jobWasSelected = new EventEmitter<Job>();
-  jobs: Job[] = [
-    new Job('Ferrari', 'Sports Car', 'https://image1.redbull.com/rbx02014/0010/1/1260/709/528/gallery/images/gallery_rb13_0002_low_34_012_v08_ric.jpg'),
-  ];
-  constructor() {}
+  jobs: Job[];
+
+  constructor(private jobService: JobService) {}
 
   ngOnInit() {
+    this.jobs = this.jobService.getJobs();
   }
 
   onJobSelected(job: Job) {
