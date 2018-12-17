@@ -1,5 +1,6 @@
 import {Component, EventEmitter, Input, OnInit, Output, ViewChild} from '@angular/core';
 import {Job} from '../../jobs.model';
+import {JobService} from '../../job.service';
 
 @Component({
   selector: 'app-job-item',
@@ -9,13 +10,13 @@ import {Job} from '../../jobs.model';
 export class JobItemComponent implements OnInit {
   // Allows binding component from outside
   @Input() job: Job;
-  @Output() jobSelected = new EventEmitter<void>();
-  constructor() { }
+
+  constructor(private jobService: JobService) { }
 
   ngOnInit() {
   }
 
   onSelected() {
-    this.jobSelected.emit();
+    this.jobService.jobSelected.emit(this.job);
   }
 }

@@ -10,9 +10,11 @@ import {JobService} from './job.service';
 })
 export class JobsComponent implements OnInit {
   selectedJob: Job;
-  constructor() { }
+  constructor(private jobService: JobService) { }
 
   ngOnInit() {
+    this.jobService.jobSelected
+      .subscribe( (job: Job) => { this.selectedJob = job; } );
   }
 
 }

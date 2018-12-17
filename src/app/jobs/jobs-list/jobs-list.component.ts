@@ -8,7 +8,6 @@ import {JobService} from '../job.service';
   styleUrls: ['./jobs-list.component.css']
 })
 export class JobsListComponent implements OnInit {
-  @Output() jobWasSelected = new EventEmitter<Job>();
   jobs: Job[];
 
   constructor(private jobService: JobService) {}
@@ -17,7 +16,4 @@ export class JobsListComponent implements OnInit {
     this.jobs = this.jobService.getJobs();
   }
 
-  onJobSelected(job: Job) {
-    this.jobWasSelected.emit(job);
-  }
 }
