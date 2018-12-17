@@ -28,7 +28,7 @@ import {AutomotiveListService} from './automotive-list/automotive-list.service';
   imports: [
     BrowserModule
   ],
-  providers: [JobService, AutomotiveListService],
+  providers: [AutomotiveListService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

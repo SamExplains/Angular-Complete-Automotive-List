@@ -1,5 +1,6 @@
 import {Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild} from '@angular/core';
 import {SharedJob} from '../../shared/jobs.model';
+import {AutomotiveListService} from '../automotive-list.service';
 
 @Component({
   selector: 'app-automotive-edit',
@@ -9,9 +10,8 @@ import {SharedJob} from '../../shared/jobs.model';
 export class AutomotiveEditComponent implements OnInit {
   @ViewChild('nameInput') nameInputRef: ElementRef;
   @ViewChild('amountInput') amountInputRef: ElementRef;
-  @Output() autolistAdded = new EventEmitter<SharedJob>();
 
-  constructor() { }
+  constructor(private alService: AutomotiveListService) { }
 
   ngOnInit() {
   }
@@ -19,7 +19,8 @@ export class AutomotiveEditComponent implements OnInit {
   onAddItem() {
     const jobName = this.nameInputRef.nativeElement.value;
     const amountName = this.amountInputRef.nativeElement.value;
-    const newJob = new SharedJob(jobName, amountName);
-    this.autolistAdded.emit(newJob);
+      const newJob = new SharedJob(jobName, amountName);
+      this.alService.addJob(newJob);
   }
 }
+
