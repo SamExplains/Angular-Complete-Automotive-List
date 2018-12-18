@@ -35,5 +35,10 @@
 </div>
 
 <div class="row">
-  <div class="col-12">Items Inclusive with Job</div>
+  <div class="col-12">
+    <ul class="list-group">
+      <li class="list-group-item" *ngFor="let sharedJob of job.jobs"> {{ sharedJob.name }} ${{ sharedJob.amount }} </li>
+      <!-- {{ sharedJob.name }}} ${{ sharedJob.amount }} -->
+    </ul>
+  </div>
 </div>
