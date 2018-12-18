@@ -21,4 +21,9 @@ export class AutomotiveListService {
     this.jobsChanged.emit(this.jobs.slice());
   }
 
+  addSharedJobs(jobs: SharedJob[]) {
+    this.jobs.push(...jobs); // ES6 spread operator
+    this.jobsChanged.emit(this.jobs.slice());
+  }
+
 }

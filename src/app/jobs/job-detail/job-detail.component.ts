@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Job} from '../jobs.model';
+import {JobService} from '../job.service';
 
 @Component({
   selector: 'app-job-detail',
@@ -8,9 +9,14 @@ import {Job} from '../jobs.model';
 })
 export class JobDetailComponent implements OnInit {
   @Input() job: Job;
-  constructor() { }
+
+  constructor(private jobService: JobService ) { }
 
   ngOnInit() {
+  }
+
+  addToCheckoutList() {
+    this.jobService.addSharedJobToCheckoutList(this.job.jobs);
   }
 
 }
