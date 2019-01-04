@@ -12,6 +12,9 @@ import { AutomotiveEditComponent } from './automotive-list/automotive-edit/autom
 import { DropdownDirective } from './shared/dropdown.directive';
 import {JobService} from './jobs/job.service';
 import {AutomotiveListService} from './automotive-list/automotive-list.service';
+import {AppRoutingModule} from './app-routing.module';
+import {FormsModule} from '@angular/forms';
+import {HttpModule} from '@angular/http';
 
 @NgModule({
   declarations: [
@@ -26,7 +29,7 @@ import {AutomotiveListService} from './automotive-list/automotive-list.service';
     DropdownDirective
   ],
   imports: [
-    BrowserModule
+    BrowserModule, FormsModule, HttpModule, AppRoutingModule
   ],
   providers: [AutomotiveListService],
   bootstrap: [AppComponent]
